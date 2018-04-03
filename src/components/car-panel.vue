@@ -42,7 +42,7 @@
                     </div>
                     <div class="nav-cart-total">
                         <p>共 <strong class="ng-binding">{{count}}</strong> 件商品</p>
-                        <h5>合计：<span class="price-icon">¥</span><span class="price-num ng-binding" ng-bind="cartMenu.totalPrice">{{ total }}</span></h5>
+                        <h5>合计：<span class="price-icon">¥</span><span class="price-num ng-binding" ng-bind="cartMenu.totalPrice">{{ totle }}</span></h5>
                         <h6>
                             <a ng-href="http://www.smartisan.com/shop/#/cart" class="nav-cart-btn" href="http://www.smartisan.com/shop/#/cart">去购物车</a>
                         </h6>
@@ -62,9 +62,9 @@
             count(){
                 return this.$store.getters.totleCount
             },
-            total(){
-                alert(this.$store.getters.totlePirce)
-                return this.$store.getters.totlePirce
+            totle(){
+                alert(this.$store.getters.totlePrice)
+                return this.$store.getters.totlePrice
             }
         }
     }
