@@ -1,11 +1,11 @@
 <template>
-    <li class="nav-cart">
+    <li class="nav-cart" @mouseenter="showCarHandle" @mouseleave="hindCarHandle">
         <a href="javascript:;">购物车</a>
         <!--根据class改变颜色-->
         <span class="cart-empty-num cart-num">
             <i>0</i>
         </span>
-        <div class="nav-cart-wrapper">
+        <div class="nav-cart-wrapper"  v-if="carShow">
             <div class="nav-cart-list">
                 <div class="empty" v-if="count<=0">
                     <h3>购物车为空</h3>
@@ -34,7 +34,7 @@
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div class="del-btn">删除</div>
+                                        <div class="del-btn" @click="delCarPanelHandle(item.sku_id)">删除</div>
                                     </div>
                                 </div>
                             </li>
@@ -56,15 +56,28 @@
 <script>
     export default {
         computed: {
-            carPanelData() {
+            carPanelData () {
                 return this.$store.state.carPanelData
             },
             count(){
                 return this.$store.getters.totleCount
             },
             totle(){
-                alert(this.$store.getters.totlePrice)
                 return this.$store.getters.totlePrice
+            },
+            carShow(){
+                return this.$store.state.carShow
+            }
+        },
+        methods:{
+            delCarPanelHandle (id) {
+                this.$store.commit('delCarPanelData',id)
+            },
+            showCarHandle () {
+                this.$store.commit('carShow')
+            },
+            hindCarHandle () {
+                this.$store.commit('carHind')
             }
         }
     }

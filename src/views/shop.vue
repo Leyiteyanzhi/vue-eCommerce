@@ -15,12 +15,15 @@
 					</div>
 				</div>
 			</div>
+      <prompt></prompt>
 		</div>
 </template>
 
 <script>
 import goodsDate from '@/lib/newGoodsData'
 import shopItem from '@/components/shop-item'
+import prompt from '@/components/prompt'
+
 export default{
     data(){
         return{
@@ -28,7 +31,8 @@ export default{
         }
     },
     components:{
-        shopItem
+        shopItem,
+        prompt
     }
 }
 </script>
