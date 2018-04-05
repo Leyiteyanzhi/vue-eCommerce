@@ -1,6 +1,6 @@
-# smartisan
+# 电商商城
 
-> my-project
+> 完成商品列表，未完待续，边学边做进行中
 
 ## Build Setup
 
